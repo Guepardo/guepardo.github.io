@@ -1,0 +1,81 @@
+  // Preset Loader
+  @import "presets.less";
+
+  //Nav Bar Styles
+  .navbar{margin-bottom: 0; li{color: #d1d1d1;}}
+
+  // .navbar-default .navbar-nav > li > a:hover, .navbar-default 
+
+  .navbar-default {
+    border: none;
+    border-radius: 0;
+    background: rgba(0, 0, 0, 0.2);
+    .navbar-brand {
+    background: url(../img/logo.png) no-repeat;
+    width: 170px;
+    height: 70px;
+  }
+  .navbar-nav li a, .navbar-nav > li > a:focus {
+    font-size: 16px;
+    padding: 0;
+    margin: 22px 15px;
+    outline: 0;
+    color: #d1d1d1;
+  }
+
+  .navbar-nav > .active > a,
+  .navbar-nav > .active > a:hover,
+  .navbar-nav > .active > a:focus,
+  .current {
+    background: none;
+    padding-bottom: 5px;
+    border-bottom: 1px solid #fff;
+    color: #fff;
+  }
+
+  .navbar-brand {
+    font-size: 55px;
+  }
+
+  .navbar-toggle{
+    .icon-bar{background: #fff;}
+    &:hover, &:focus{background: #333;}
+  }
+  }
+
+  .affix.navbar-default{
+    background: rgba(0, 0, 0, 0.8);
+  }
+
+  .animated-nav li a::before {
+    position: absolute;
+    overflow: hidden;
+    max-width: 0;
+    border-bottom: 1px solid #fff;
+    padding-bottom: 5px;
+    color: #fff;
+    content: attr(data-hover);
+    -webkit-transition: max-width 0.7s;
+    -moz-transition: max-width 0.7s;
+    transition: max-width 0.7s;
+  }
+
+  .animated-nav li a:hover::before{
+    max-width: 100%;
+  }
+
+  //Scrolling Arrow
+  .navbar .to-top, .navbar .to-bottom{display: none;}
+
+  .affix-top .to-bottom{display: block !important;}
+
+  .affix .to-top{display: block !important;}
+
+  .to-top, .to-bottom{list-style: none;}
+
+  .to-top a, .to-bottom a{
+  padding: 26px 22px;
+  line-height: 70px;
+  outline: 0;
+  color: #fff;
+  }
