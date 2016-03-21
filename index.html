@@ -3,12 +3,10 @@
 <head>
 	<title id="title">Guepardo Coding...</title>
 	<meta charset="UTF-8">
-	<style type="text/css">
-		body{
-			background-color: rgb(35,36,31); 
-		}
-	</style>
 	<link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.2.0/styles/monokai-sublime.min.css">
+	<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+	<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.1/animate.min.css">
+	<link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <body>
 
@@ -23,6 +21,14 @@
 
 </script>
 
+<div id="contact">
+	<h2>Contatos</h2>
+	<a href="https://github.com/guepardo" class="fa fa-github-alt fa-3x"></a>
+	<a href="https://www.linkedin.com/in/allyson-maciel-guimar%C3%A3es-30a417b9" class="fa fa-linkedin-square fa-3x"></a>
+	<a href="https://join.skype.com/CWCZ8G3CpUGD" class="fa fa-skype fa-3x"></a>
+	<a href="www.google.com.br" class="fa fa-whatsapp fa-3x"></a>
+</div>
+
 <pre><code id="code" class="js">
 var resume  = new Resume("Allyson Maciel Guimarães",22); 
 resume.start(); 
@@ -32,7 +38,7 @@ resume.start();
 /*
 FORMAÇÃO: 
 	*Colégio Padre Fernando Gomes de Melo  [2012];
-	*Universidade Estadual de Goiás        [2012-2016].
+	*Universidade Estadual de Goiás        [2012-2015].
 
 HABILIDADES: 
 	*Modelagem de dados em banco de dados SQL e NoSQL; 
@@ -62,11 +68,11 @@ SISTEMAS OPERACIONAIS:
 	*Linux   (sei resolver os problemas nele). 
 
 MEUS PROJETOS PESSOAIS: 
-	*<a href="https://github.com/Guepardo/YoutubeSession">YoutubeSession</a> (Javascript + Node.js + MongoDB); 
-	*<a href="https://github.com/Guepardo/Luwitter">Luwitter</a> (Javascript + Node.js + MongoDB); 
+	*<a href="https://github.com/Guepardo/YoutubeSession">YoutubeSession</a> (JavaScript + Node.js + MongoDB); 
+	*<a href="https://github.com/Guepardo/Luwitter">Luwitter</a> (JavaScript + Node.js + MongoDB); 
 	*<a href="https://github.com/Guepardo/EgressoOnline_PHP">EgressoOnline_PHP</a> (PHP + Mysql); 
 	*<a href="https://github.com/Guepardo/FerretOut">FerretOut</a> (Java SE); 
-	*<a href="https://github.com/Guepardo/BotIRCnode">BotIRCnode</a> (Javascript + Node.js); 
+	*<a href="https://github.com/Guepardo/BotIRCnode">BotIRCnode</a> (JavaScript + Node.js); 
 	*<a href="https://github.com/Guepardo/BotIRC">BotIRC</a> (Java SE). 
 */
 
@@ -651,33 +657,6 @@ module.exports = socketServer;
 </code></pre>
 
 <script src="http://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.2.0/highlight.min.js"></script>
-<script>
-	hljs.initHighlightingOnLoad();
-
-	var i    = 0; 
-	var text = document.getElementById('code').innerHTML; 
-	var temp; 
-
-	function scroll(){
-	    var element = document.body;
-	    if((window.innerHeight + window.scrollY) >= document.body.offsetHeight) {
-	        element.scrollTop = element.scrollHeight;
-	    }
-	}
-
-	function type(){
-		temp  = text.slice(0, ++i); 
-		temp += '<span>|</span>'; 
-
-		document.getElementById('code').innerHTML = temp; 
-		hljs.highlightBlock(document.getElementById('code'));
-
-		var timeout = parseInt((Math.random() * 10)+  40);
-		scroll();
-		setTimeout(type,timeout); 
-	}
-
-	type(); 
-</script>
+<script src="main.js" type="text/javascript"></script>
 </body>
 </html>
