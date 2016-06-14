@@ -1,0 +1,106 @@
+		.primary-title{
+			color:black;
+			text-align: center;
+			font-style:italic;
+		}	
+
+		.secundary-title{
+			text-align: center; 
+			margin: 20px 0 20px 0;
+		}
+
+		.secundary-container{
+			margin-top:30px;
+		}
+
+		.text{
+			color: gray;
+		}
+
+		.orbit-margin{
+			margin-top:20px;
+		}
+
+		.orbit-title{
+			text-align: center;
+			margin: 20px 0 20px 0;
+		}
+
+		.tiny-border{
+			border-width: 1px;
+			border-style: solid;
+			border-color: #9b59b6;
+			border-radius: 4px;
+		}
+
+		.tech-text{
+			font-style: italic;
+		}
+
+		.tech-hightlight{
+			border-color: #9b59b6;
+			border-style: dotted;
+			border-width: 2px;
+			border-radius: 3px;
+			padding: 5px;
+		}
+
+		.link-item{
+			border-color: #9b59b6;
+			border-width: 1px;
+			padding: 10px;
+			border-style: dashed;
+			border-radius: 15px;
+			margin: 2px;
+			display: inline-block;
+		}
+
+		.bg{
+			/*background-image: url('src/img/bg.jpg');*/
+			background: #c0392b; 
+			color:white; 
+			margin: 45px 0 10px 0;
+			padding-top: 10px;
+		}
+
+		footer{
+			margin-top:30px;
+			background: #22313F; 
+			text-align:center;
+		}
+
+		footer span{
+			color:white;
+		}
+
+		body{
+			font-family: 'Roboto', sans-serif !important;
+			background-color: #ecf0f1; 
+		}
+
+		video{
+			height: 100%; 
+			width: 100%;
+		}
+
+		.color-1{
+			background-color: #913D88; 
+		}
+
+		.color-2{
+			background-color: #22313F; 
+		}
+
+		.color-3{
+			background-color: #2ECC71; 
+		}
+
+		.color-4{
+			background-color: #D2527F; 
+		}
+
+		.color-5{
+			background-color: #03C9A9; 
+		}
+
+

@@ -2,71 +2,15 @@
 <html>
 <head>
 	<title>Portifólio</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 	<meta charset="utf-8">
-	<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/foundation/6.2.3/foundation.css">
-	<link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
-
-	<style type="text/css">
-		.primary-title{
-			color:black;
-			text-align: center;
-			font-style:italic;
-		}	
-
-		.secundary-title{
-			text-align: center; 
-			margin: 20px 0 20px 0;
-		}
-
-		.secundary-container{
-			margin-top:30px;
-		}
-
-		.text{
-			color: gray;
-		}
-
-		.orbit-margin{
-			margin-top:20px;
-		}
-
-		.orbit-title{
-			text-align: center;
-			margin: 20px 0 20px 0;
-		}
-
-		.tiny-border{
-			border-style: solid;
-			border-color: #9b59b6;
-			border-radius: 4px;
-		}
-
-		.tech-text{
-			font-style: italic;
-		}
-
-		.bg{
-			/*background-image: url('src/img/bg.jpg');*/
-			background: #c0392b; 
-			color:white; 
-			margin: 45px 0 10px 0;
-			padding-top: 10px;
-		}
-
-		body{
-			font-family: 'Roboto', sans-serif !important;
-			background-color: #ecf0f1; 
-		}
-
-		video{
-			height: 100%; 
-			width: 100%;
-		}
-
-	</style>
-
+	<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/foundation/6.2.3/foundation.css" />
+	<link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css' />
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/motion-ui/1.1.1/motion-ui.min.css" />
+	<link rel="stylesheet" type="text/css" href="src/css/style.css" />
 </head>
 <body>
+
 	<!-- LINHA 0 -->
 	<div class="row">
 		<div class="medium-12 columns">
@@ -75,48 +19,201 @@
 
 		<!-- Introdução -->
 		<div class="medium-12 columns">
-			<p class="text text-justify">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-				tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-				quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-				consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-				cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-				proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-			</div>		
-		</div>
-		<!-- LINHA 0 -->
+			<p class="text text-justify"></p>
+		</div>		
+	</div>
+	<!-- LINHA 0 -->
 
+	<!-- LINHA 1 -->
+	<div class="row secundary-container">
+		<!-- título -->
+		<div class="medium-12 columns">
+			<h3 class="secundary-title">YouSession</h3>
+		</div>	
+
+		<!--explicação-->
+		<div class="row">
+
+			<div class="medium-8 small-6 columns">
+				<video class="tiny-border" autoplay loop>
+					<source src="src/video/yousession.mp4" type="video/mp4">
+					</video>
+				</div>
+
+				<div class="medium-4 small-6 columns">
+					<h4>Descrição</h4>
+					<p class="text text-justify">YouSession possibilita aos seus usuários assistir a vídeos do YouTube simultâneamente com demais usuários em um sala. Também fornece interação aos usuários por meio de um chat direto que não necessita login, basta inserir um nickname e pronto.</p>
+
+
+					<div class="tech-hightlight">
+						<h4>Tecnologias</h4>
+						<h6 class="tech-text">Node.js (Javascript) + Html + Css + Materialize.css</h6>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="bg color-1">
+			<!--label pré orbit-->
+			<div class="row orbit-margin">
+				<div class="medium-12 columns">
+					<h3 class="orbit-title">Fotos do projeto</h3>
+				</div>
+			</div>	
+
+			<!-- orbit -->
+			<div class="row">
+				<div class="medium-10 medium-centered columns">
+					<div class="orbit" role="region" aria-label="Favorite  Pictures" data-orbit data-options="animInFromLeft:fade-in; animInFromRight:fade-in; animOutToLeft:fade-out; animOutToRight:fade-out;">
+						<ul class="orbit-container">
+							<button class="orbit-previous"><span class="show-for-sr">Slide Anterior</span> &#9664;&#xFE0E;</button>
+							<button class="orbit-next"><span class="show-for-sr">Proximo Slide</span> &#9654;&#xFE0E;</button>
+							<li class="orbit-slide is-active">
+								<img class="orbit-image" src="src/img/yousession/1.png" alt="">
+								<figcaption class="orbit-caption">Uma sessão do YouSession.</figcaption>
+							</li>
+
+							<li class="orbit-slide">
+								<img class="orbit-image" src="src/img/yousession/2.png" alt="">
+								<figcaption class="orbit-caption">YouSession informando em tempo real que alguém está digitando.</figcaption>
+							</li>
+
+							<li class="orbit-slide">
+								<img class="orbit-image" src="src/img/yousession/3.png" alt="">
+								<figcaption class="orbit-caption">Formulário para criar uma sessão.</figcaption>
+							</li>
+
+							<li class="orbit-slide">
+								<img class="orbit-image" src="src/img/yousession/4.png" alt="">
+								<figcaption class="orbit-caption">Lista de sessões online, tempo corrente de sessão e quantidade de pessoas online.</figcaption>
+							</li>
+
+
+						</ul>
+					</div>
+
+				</div>	
+			</div>
+
+		</div>
 		<!-- LINHA 1 -->
+
+
+		<!-- LINHA 2-->
 		<div class="row secundary-container">
 			<!-- título -->
 			<div class="medium-12 columns">
-				<h3 class="secundary-title">YouSession</h3>
+				<h3 class="secundary-title">EgressoOnline</h3>
 			</div>	
 
 			<!--explicação-->
 			<div class="row">
+				<div class="medium-4 small-6 columns">
+					<h4>Descrição</h4>
+					<p class="text text-justify">EgressoOnline é uma rede social para os egressos do curso de Sistemas de Informação. Essa rede dá suporte a perfis de usuário, divulgação de emprego e oportunidades, timeline inteligente, envios de mensagens e notificações via email. Também dá suporte a mineração de dados e três tipos diferentes de usuários.</p>
+					<div class="tech-hightlight">
+						<h4>Tecnologias</h4>
+						<h6 class="tech-text">PHP + Html + Css + Foundation + Javascript + Mysql</h6>
+					</div>
+				</div>
 
 				<div class="medium-8 small-6 columns">
 					<video class="tiny-border" autoplay loop>
-						<source src="src/video/test.mp4" type="video/mp4">
+						<source src="src/video/egressoonline.mp4" type="video/mp4">
 						</video>
 					</div>
 
-					<div class="medium-4 small-6 columns">
-						<h4>Descrição</h4>
-						<p class="text text-justify">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-							tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-							quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-							consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-							cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-							proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+				</div>
+			</div>
 
-							<h4>Tecnologias</h4>
-							<h6 class="tech-text">Node.js (Javascript) + Html + Css + Materialize.css</h6>
+			<div class="bg color-2">
+				<!--label pré orbit-->
+				<div class="row orbit-margin">
+					<div class="medium-12 columns">
+						<h3 class="orbit-title">Fotos do projeto</h3>
+					</div>
+				</div>	
+
+				<!-- orbit -->
+				<div class="row">
+					<div class="medium-10 medium-centered columns">
+						<div class="orbit" role="region" aria-label="Favorite  Pictures" data-orbit data-options="animInFromLeft:fade-in; animInFromRight:fade-in; animOutToLeft:fade-out; animOutToRight:fade-out;">
+							<ul class="orbit-container">
+								<button class="orbit-previous"><span class="show-for-sr">Slide Anterior</span> &#9664;&#xFE0E;</button>
+								<button class="orbit-next"><span class="show-for-sr">Proximo Slide</span> &#9654;&#xFE0E;</button>
+								<li class="orbit-slide is-active">
+									<img class="orbit-image" src="src/img/egressoonline/1.png" alt="">
+									<figcaption class="orbit-caption">Tela de login.</figcaption>
+								</li>
+
+								<li class="orbit-slide">
+									<img class="orbit-image" src="src/img/egressoonline/2.png" alt="">
+									<figcaption class="orbit-caption">Timeline com algumas mensagens e oportunidades.</figcaption>
+								</li>
+
+								<li class="orbit-slide">
+									<img class="orbit-image" src="src/img/egressoonline/3.png" alt="">
+									<figcaption class="orbit-caption">Formulário para divulgação de emprego na plataforma.</figcaption>
+								</li>
+
+								<li class="orbit-slide">
+									<img class="orbit-image" src="src/img/egressoonline/4.png" alt="">
+									<figcaption class="orbit-caption">Visualização de uma divulgação de emprego.</figcaption>
+								</li>
+
+								<li class="orbit-slide">
+									<img class="orbit-image" src="src/img/egressoonline/5.png" alt="">
+									<figcaption class="orbit-caption">Lista de perfis no mecanismo de busca.</figcaption>
+								</li>
+
+								<li class="orbit-slide">
+									<img class="orbit-image" src="src/img/egressoonline/6.png" alt="">
+									<figcaption class="orbit-caption">Lista de oportunidades divulgadas no EgressoOnline.</figcaption>
+								</li>
+
+								<li class="orbit-slide">
+									<img class="orbit-image" src="src/img/egressoonline/7.png" alt="">
+									<figcaption class="orbit-caption">Tela de alteração de dados do egresso.</figcaption>
+								</li>
+
+							</ul>
+						</div>
+					</div>	
+				</div>
+
+			</div>
+			<!-- LINHA 2-->
+
+
+			<!-- LINHA 3 -->
+			<div class="row secundary-container">
+				<!-- título -->
+				<div class="medium-12 columns">
+					<h3 class="secundary-title">CutUrl</h3>
+				</div>	
+
+				<!--explicação-->
+				<div class="row">
+
+					<div class="medium-8 small-6 columns">
+						<video class="tiny-border" autoplay loop>
+							<source src="src/video/cuturl.mp4" type="video/mp4">
+							</video>
+						</div>
+
+						<div class="medium-4 small-6 columns">
+							<h4>Descrição</h4>
+							<p class="text text-justify">CurtUrl é um software criado para encurtar url grandes para algo que seja menor. Esse software usa uma tecnologia chamada hash (adler32 algoritmo) que garante que todas as urls encurtadas por ele sejam de apenas um tamanho.</p>
+
+							<div class="tech-hightlight">
+								<h4>Tecnologias</h4>
+								<h6 class="tech-text">PHP + Mysql + Html + SlimFramework</h6>
+							</div>
 						</div>
 					</div>
 				</div>
 
-				<div class="bg">
+				<div class="bg color-3">
 					<!--label pré orbit-->
 					<div class="row orbit-margin">
 						<div class="medium-12 columns">
@@ -126,74 +223,125 @@
 
 					<!-- orbit -->
 					<div class="row">
-						<div class="medium-8 medium-centered columns">
-							<div class="orbit" role="region" aria-label="Favorite Space Pictures" data-orbit>
+						<div class="medium-10 medium-centered columns">
+							<div class="orbit" role="region" aria-label="Favorite  Pictures" data-orbit data-options="animInFromLeft:fade-in; animInFromRight:fade-in; animOutToLeft:fade-out; animOutToRight:fade-out;">
 								<ul class="orbit-container">
-									<button class="orbit-previous"><span class="show-for-sr">Previous Slide</span>&#9664;&#xFE0E;</button>
-									<button class="orbit-next"><span class="show-for-sr">Next Slide</span>&#9654;&#xFE0E;</button>
-									<li class="is-active orbit-slide">
-										<img class="orbit-image" src="https://i.ytimg.com/vi/KGMqe7_8ORI/maxresdefault.jpg" alt="Space">
-										<figcaption class="orbit-caption">Space, the final frontier.</figcaption>
+									<button class="orbit-previous"><span class="show-for-sr">Slide Anterior</span> &#9664;&#xFE0E;</button>
+									<button class="orbit-next"><span class="show-for-sr">Proximo Slide</span> &#9654;&#xFE0E;</button>
+									<li class="orbit-slide is-active">
+										<img class="orbit-image" src="src/img/cuturl/1.png" alt="">
+										<figcaption class="orbit-caption">Tela de encurtamento do CurtUrl.</figcaption>
 									</li>
+
 									<li class="orbit-slide">
-										<img class="orbit-image" src="http://1.bp.blogspot.com/-IaHcOpz0R50/VFKwAPHt0AI/AAAAAAAABJg/DNz2P2-Qi9Y/s1600/Teste%2Bcopel.png" alt="Space">
-										<figcaption class="orbit-caption">Lets Rocket!</figcaption>
+										<img class="orbit-image" src="src/img/cuturl/2.png" alt="">
+										<figcaption class="orbit-caption">Resultado do processo de encurtamento com alguns dados adicionais.</figcaption>
 									</li>
-									<li class="orbit-slide">
-										<img class="orbit-image" src="https://i.ytimg.com/vi/KGMqe7_8ORI/maxresdefault.jpg" alt="Space">
-										<figcaption class="orbit-caption">Encapsulating</figcaption>
-									</li>
-									<li class="orbit-slide">
-										<img class="orbit-image" src="https://i.ytimg.com/vi/KGMqe7_8ORI/maxresdefault.jpg" alt="Space">
-										<figcaption class="orbit-caption">Outta This World</figcaption>
-									</li>
+
 								</ul>
-								<nav class="orbit-bullets">
-									<button class="is-active" data-slide="0"><span class="show-for-sr">First slide details.</span><span class="show-for-sr">Current Slide</span></button>
-									<button data-slide="1"><span class="show-for-sr">Second slide details.</span></button>
-									<button data-slide="2"><span class="show-for-sr">Third slide details.</span></button>
-									<button data-slide="3"><span class="show-for-sr">Fourth slide details.</span></button>
-								</nav>
 							</div>
+
+
 						</div>	
 					</div>
 
 				</div>
-				<!-- LINHA 1 -->
+				<!-- LINHA 3 -->
 
 
-				<!-- LINHA 1 -->
+				<!-- LINHA 4 -->
 				<div class="row secundary-container">
 					<!-- título -->
 					<div class="medium-12 columns">
-						<h3 class="secundary-title">YouSession</h3>
+						<h3 class="secundary-title">Luwitter</h3>
 					</div>	
 
 					<!--explicação-->
 					<div class="row">
+
+
+
 						<div class="medium-4 small-6 columns">
 							<h4>Descrição</h4>
-							<p class="text text-justify">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-								tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-								quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-								consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-								cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-								proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+							<p class="text text-justify">Um site que copia as funções do site Twitter. A criação deste projeto é de cunho exploratório na aplicação de tecnologias que até então eu não tinha tanto conhecimento. Tecnologias aplicadas Node.js (back-end), Foundation 6 (front-end) e MongoDB (persistência). </p>
 
+							<div class="tech-hightlight">
 								<h4>Tecnologias</h4>
-								<h6 class="tech-text">Node.js (Javascript) + Html + Css + Materialize.css</h6>
-							</div>
-
-							<div class="medium-8 small-6 columns">
-								<video class="tiny-border" autoplay loop>
-									<source src="src/video/test.mp4" type="video/mp4">
-									</video>
-								</div>
-
+								<h6 class="tech-text">Node.js (Javascript) + Html + Css + Foundation + Socket.io + MongoDB</h6>
 							</div>
 						</div>
 
-						<div class="bg">
+						<div class="medium-8 small-6 columns">
+							<video class="tiny-border" autoplay loop>
+								<source src="src/video/luwitter.mp4" type="video/mp4">
+								</video>
+							</div>
+						</div>
+					</div>
+
+					<div class="bg color-4">
+						<!--label pré orbit-->
+						<div class="row orbit-margin">
+							<div class="medium-12 columns">
+								<h3 class="orbit-title">Fotos do projeto</h3>
+							</div>
+						</div>	
+
+						<!-- orbit -->
+						<div class="row">
+							<div class="medium-10 medium-centered columns">
+								<div class="orbit" role="region" aria-label="Favorite  Pictures" data-orbit data-options="animInFromLeft:fade-in; animInFromRight:fade-in; animOutToLeft:fade-out; animOutToRight:fade-out;">
+									<ul class="orbit-container">
+										<button class="orbit-previous"><span class="show-for-sr">Slide Anterior</span> &#9664;&#xFE0E;</button>
+										<button class="orbit-next"><span class="show-for-sr">Proximo Slide</span> &#9654;&#xFE0E;</button>
+										<li class="orbit-slide is-active">
+											<img class="orbit-image" src="src/img/luwitter/1.png" alt="">
+											<figcaption class="orbit-caption">Tela de login e cadastro.</figcaption>
+										</li>
+
+										<li class="orbit-slide">
+											<img class="orbit-image" src="src/img/luwitter/2.png" alt="">
+											<figcaption class="orbit-caption">Timeline com feed em tempo real.</figcaption>
+										</li>
+
+									</ul>
+								</div>
+							</div>	
+						</div>
+
+					</div>
+					<!-- LINHA 4 -->
+
+
+					<!-- LINHA 5 -->
+					<div class="row secundary-container">
+						<!-- título -->
+						<div class="medium-12 columns">
+							<h3 class="secundary-title">Delivery (Webapp & AppMobile)</h3>
+						</div>	
+
+						<!--explicação-->
+						<div class="row">
+
+							<div class="medium-8 small-6 columns">
+								<video class="tiny-border" autoplay loop>
+									<source src="src/video/delivery.mp4" type="video/mp4">
+									</video>
+								</div>
+
+								<div class="medium-4 small-6 columns">
+									<h4>Descrição</h4>
+									<p class="text text-justify">Delivery é uma aplicação que gerencia pedidos. Seu funcionamento básico é enviar a localização (gps) de uma solicitação de entrega para um sistema de gerenciamento de pedidos. Os pedidos são enviados para os prestadores de serviços que estão livres no momento. Esse software se integra com o aplicativo de mensagens Telegram, assim o prestador de serviço pode estar em qualquer lugar e ainda receber pedidos.</p>
+
+									<div class="tech-hightlight">
+										<h4>Tecnologias</h4>
+										<h6 class="tech-text">Node.js (Javascript) + Html + Css + Foundation + Telegram API bot + MongoDB + Socket.io + <b>Phonegap</b></h6>
+									</div>
+								</div>
+							</div>
+						</div>
+
+						<div class="bg color-3">
 							<!--label pré orbit-->
 							<div class="row orbit-margin">
 								<div class="medium-12 columns">
@@ -203,207 +351,91 @@
 
 							<!-- orbit -->
 							<div class="row">
-								<div class="medium-8 medium-centered columns">
-									<div class="orbit" role="region" aria-label="Favorite Space Pictures" data-orbit>
+								<div class="medium-10 medium-centered columns">
+									<div class="orbit" role="region" aria-label="Favorite  Pictures" data-orbit data-options="animInFromLeft:fade-in; animInFromRight:fade-in; animOutToLeft:fade-out; animOutToRight:fade-out;">
 										<ul class="orbit-container">
-											<button class="orbit-previous"><span class="show-for-sr">Previous Slide</span>&#9664;&#xFE0E;</button>
-											<button class="orbit-next"><span class="show-for-sr">Next Slide</span>&#9654;&#xFE0E;</button>
-											<li class="is-active orbit-slide">
-												<img class="orbit-image" src="https://i.ytimg.com/vi/KGMqe7_8ORI/maxresdefault.jpg" alt="Space">
-												<figcaption class="orbit-caption">Space, the final frontier.</figcaption>
+											<button class="orbit-previous"><span class="show-for-sr">Slide Anterior</span> &#9664;&#xFE0E;</button>
+											<button class="orbit-next"><span class="show-for-sr">Proximo Slide</span> &#9654;&#xFE0E;</button>
+											<li class="orbit-slide is-active">
+												<img class="orbit-image" src="src/img/delivery/1.png" alt="">
+												<figcaption class="orbit-caption">Cliente registrando um pedido; localização via gps sendo obtida.</figcaption>
 											</li>
+
 											<li class="orbit-slide">
-												<img class="orbit-image" src="http://1.bp.blogspot.com/-IaHcOpz0R50/VFKwAPHt0AI/AAAAAAAABJg/DNz2P2-Qi9Y/s1600/Teste%2Bcopel.png" alt="Space">
-												<figcaption class="orbit-caption">Lets Rocket!</figcaption>
+												<img class="orbit-image" src="src/img/delivery/2.png" alt="">
+												<figcaption class="orbit-caption">Prestador de serviço aceitando uma um pedido. </figcaption>
 											</li>
+
 											<li class="orbit-slide">
-												<img class="orbit-image" src="https://i.ytimg.com/vi/KGMqe7_8ORI/maxresdefault.jpg" alt="Space">
-												<figcaption class="orbit-caption">Encapsulating</figcaption>
+												<img class="orbit-image" src="src/img/delivery/3.png" alt="">
+												<figcaption class="orbit-caption">Tela de login para o prestador de serviço.</figcaption>
 											</li>
+
 											<li class="orbit-slide">
-												<img class="orbit-image" src="https://i.ytimg.com/vi/KGMqe7_8ORI/maxresdefault.jpg" alt="Space">
-												<figcaption class="orbit-caption">Outta This World</figcaption>
+												<img class="orbit-image" src="src/img/delivery/4.png" alt="">
+												<figcaption class="orbit-caption">Dashboard do prestador de serviço.</figcaption>
 											</li>
+											
 										</ul>
-										<nav class="orbit-bullets">
-											<button class="is-active" data-slide="0"><span class="show-for-sr">First slide details.</span><span class="show-for-sr">Current Slide</span></button>
-											<button data-slide="1"><span class="show-for-sr">Second slide details.</span></button>
-											<button data-slide="2"><span class="show-for-sr">Third slide details.</span></button>
-											<button data-slide="3"><span class="show-for-sr">Fourth slide details.</span></button>
-										</nav>
 									</div>
+
+
 								</div>	
 							</div>
 
 						</div>
-						<!-- LINHA 1 -->
+						<!-- LINHA 5 -->
 
 
-						<!-- LINHA 1 -->
+						<!-- LINHA 6 -->
 						<div class="row secundary-container">
 							<!-- título -->
 							<div class="medium-12 columns">
-								<h3 class="secundary-title">YouSession</h3>
+								<h3 class="secundary-title">Outros Projetos & códigos fonte</h3>
 							</div>	
 
-							<!--explicação-->
+
 							<div class="row">
+								<div class="medium-8 medium-centered columns">
+									<a class="link-item" href="https://github.com/Guepardo/guepardo.github.io">Portifolio</a>
+									<a class="link-item" href="https://github.com/Guepardo/GerenciadorDeEventos">GerenciadorDeEventos</a>
+									<a class="link-item" href="https://github.com/Guepardo/YoutubeSession">YouSession</a>
+									<a class="link-item" href="https://github.com/Guepardo/Node.jsMicroArquitetura">Node.jsMicroArquitetura</a>
+									<a class="link-item" href="https://github.com/Guepardo/shorturl">CutUrl</a>
+									<a class="link-item" href="https://github.com/Guepardo/dlPc_app">DeliveryApp</a>
+									<a class="link-item" href="https://github.com/Guepardo/dlPc_backend">DeliverySistema</a>
+									<a class="link-item" href="https://github.com/Guepardo/Luwitter">Luwitter</a>
+									<a class="link-item" href="https://github.com/Guepardo/EgressoOnline_PHP">EgressoOnline</a>
+									<a class="link-item" href="https://github.com/Guepardo/SuperPlayer_Downloader">SuperPlayerDownloader</a>
+									<a class="link-item" href="https://github.com/Guepardo/BotIRCnode">BotIRCNode</a>
+									<a class="link-item" href="https://github.com/Guepardo/Graduacao_projetos">ProjetosGraduação</a>
+									<a class="link-item" href="https://github.com/Guepardo/ChatNode">ChatNode</a>
+									<a class="link-item" href="https://github.com/Guepardo/PseudoArquiteturaPHP">ArquiteturaPHP</a>
+									<a class="link-item" href="https://github.com/Guepardo/FerretOut">FerretOut</a>
+									<a class="link-item" href="https://github.com/Guepardo/BotIRC">BotIRC(Java)</a>
+									<a class="link-item" href="https://github.com/CyberdyneOfCerrado/Pechincha">Pechincha</a>
+								</div>
+							</div>
 
-								<div class="medium-8 small-6 columns">
-									<video class="tiny-border" autoplay loop>
-										<source src="src/video/test.mp4" type="video/mp4">
-										</video>
-									</div>
+						</div>
+						<!-- LINHA 6 -->
 
-									<div class="medium-4 small-6 columns">
-										<h4>Descrição</h4>
-										<p class="text text-justify">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-											tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-											quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-											consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-											cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-											proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-
-											<h4>Tecnologias</h4>
-											<h6 class="tech-text">Node.js (Javascript) + Html + Css + Materialize.css</h6>
-										</div>
+						<!-- LINHA 7 -->
+						<footer>
+							<div class="row">
+								<div class="medium-12 columns">
+									<span><b>Allyson Maciel</b> 2016.<br>
+										Todos os direitos reservados.</span>
 									</div>
 								</div>
+							</div>
+						</footer>
+						<!-- LINHA 7 -->
 
-								<div class="bg">
-									<!--label pré orbit-->
-									<div class="row orbit-margin">
-										<div class="medium-12 columns">
-											<h3 class="orbit-title">Fotos do projeto</h3>
-										</div>
-									</div>	
-
-									<!-- orbit -->
-									<div class="row">
-										<div class="medium-8 medium-centered columns">
-											<div class="orbit" role="region" aria-label="Favorite Space Pictures" data-orbit>
-												<ul class="orbit-container">
-													<button class="orbit-previous"><span class="show-for-sr">Previous Slide</span>&#9664;&#xFE0E;</button>
-													<button class="orbit-next"><span class="show-for-sr">Next Slide</span>&#9654;&#xFE0E;</button>
-													<li class="is-active orbit-slide">
-														<img class="orbit-image" src="https://i.ytimg.com/vi/KGMqe7_8ORI/maxresdefault.jpg" alt="Space">
-														<figcaption class="orbit-caption">Space, the final frontier.</figcaption>
-													</li>
-													<li class="orbit-slide">
-														<img class="orbit-image" src="http://1.bp.blogspot.com/-IaHcOpz0R50/VFKwAPHt0AI/AAAAAAAABJg/DNz2P2-Qi9Y/s1600/Teste%2Bcopel.png" alt="Space">
-														<figcaption class="orbit-caption">Lets Rocket!</figcaption>
-													</li>
-													<li class="orbit-slide">
-														<img class="orbit-image" src="https://i.ytimg.com/vi/KGMqe7_8ORI/maxresdefault.jpg" alt="Space">
-														<figcaption class="orbit-caption">Encapsulating</figcaption>
-													</li>
-													<li class="orbit-slide">
-														<img class="orbit-image" src="https://i.ytimg.com/vi/KGMqe7_8ORI/maxresdefault.jpg" alt="Space">
-														<figcaption class="orbit-caption">Outta This World</figcaption>
-													</li>
-												</ul>
-												<nav class="orbit-bullets">
-													<button class="is-active" data-slide="0"><span class="show-for-sr">First slide details.</span><span class="show-for-sr">Current Slide</span></button>
-													<button data-slide="1"><span class="show-for-sr">Second slide details.</span></button>
-													<button data-slide="2"><span class="show-for-sr">Third slide details.</span></button>
-													<button data-slide="3"><span class="show-for-sr">Fourth slide details.</span></button>
-												</nav>
-											</div>
-										</div>	
-									</div>
-
-								</div>
-								<!-- LINHA 1 -->
-
-
-								<!-- LINHA 1 -->
-								<div class="row secundary-container">
-									<!-- título -->
-									<div class="medium-12 columns">
-										<h3 class="secundary-title">YouSession</h3>
-									</div>	
-
-									<!--explicação-->
-									<div class="row">
-
-										
-
-										<div class="medium-4 small-6 columns">
-											<h4>Descrição</h4>
-											<p class="text text-justify">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-												tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-												quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-												consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-												cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-												proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-
-												<h4>Tecnologias</h4>
-												<h6 class="tech-text">Node.js (Javascript) + Html + Css + Materialize.css</h6>
-											</div>
-
-											<div class="medium-8 small-6 columns">
-												<video class="tiny-border" autoplay loop>
-													<source src="src/video/test.mp4" type="video/mp4">
-													</video>
-												</div>
-											</div>
-										</div>
-
-										<div class="bg">
-											<!--label pré orbit-->
-											<div class="row orbit-margin">
-												<div class="medium-12 columns">
-													<h3 class="orbit-title">Fotos do projeto</h3>
-												</div>
-											</div>	
-
-											<!-- orbit -->
-											<div class="row">
-												<div class="medium-8 medium-centered columns">
-													<div class="orbit" role="region" aria-label="Favorite Space Pictures" data-orbit>
-														<ul class="orbit-container">
-															<button class="orbit-previous"><span class="show-for-sr">Previous Slide</span>&#9664;&#xFE0E;</button>
-															<button class="orbit-next"><span class="show-for-sr">Next Slide</span>&#9654;&#xFE0E;</button>
-															<li class="is-active orbit-slide">
-																<img class="orbit-image" src="https://i.ytimg.com/vi/KGMqe7_8ORI/maxresdefault.jpg" alt="Space">
-																<figcaption class="orbit-caption">Space, the final frontier.</figcaption>
-															</li>
-															<li class="orbit-slide">
-																<img class="orbit-image" src="http://1.bp.blogspot.com/-IaHcOpz0R50/VFKwAPHt0AI/AAAAAAAABJg/DNz2P2-Qi9Y/s1600/Teste%2Bcopel.png" alt="Space">
-																<figcaption class="orbit-caption">Lets Rocket!</figcaption>
-															</li>
-															<li class="orbit-slide">
-																<img class="orbit-image" src="https://i.ytimg.com/vi/KGMqe7_8ORI/maxresdefault.jpg" alt="Space">
-																<figcaption class="orbit-caption">Encapsulating</figcaption>
-															</li>
-															<li class="orbit-slide">
-																<img class="orbit-image" src="https://i.ytimg.com/vi/KGMqe7_8ORI/maxresdefault.jpg" alt="Space">
-																<figcaption class="orbit-caption">Outta This World</figcaption>
-															</li>
-														</ul>
-														<nav class="orbit-bullets">
-															<button class="is-active" data-slide="0"><span class="show-for-sr">First slide details.</span><span class="show-for-sr">Current Slide</span></button>
-															<button data-slide="1"><span class="show-for-sr">Second slide details.</span></button>
-															<button data-slide="2"><span class="show-for-sr">Third slide details.</span></button>
-															<button data-slide="3"><span class="show-for-sr">Fourth slide details.</span></button>
-														</nav>
-													</div>
-												</div>	
-											</div>
-
-										</div>
-										<!-- LINHA 1 -->
-
-
-
-
-
-
-
-										<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
-										<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/foundation/6.2.3/foundation.min.js"></script>
-										<script type="text/javascript">
-											$(document).foundation(); 
-										</script>
-									</body>
-									</html>'
+						<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
+						<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/foundation/6.2.3/foundation.min.js"></script>
+						<script type="text/javascript">
+							$(document).foundation();
+						</script>
+					</body>
+					</html>
