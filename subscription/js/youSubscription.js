@@ -24,10 +24,13 @@ YouSubscription.prototype.start = function(){
 	var urlRequest = this.urlBase.replace('$apiKey$', this.apiKey); 
 	urlRequest     = urlRequest.replace('$userName$', encodeURIComponent(this.userName));
 
+	var self = this; 
+
 	setInterval(function(){
 		$.get(urlRequest).
 		done(function(data){
-			console.log(data); 
+			var count = new Number(data.items[0].statistics.subscriberCount); 
+			$(self.elId).text(count.toLocaleString('pt'));  
 		}); 
 	}, this.interval); 
 
