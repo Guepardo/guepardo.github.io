@@ -8,6 +8,7 @@
 	.box{
 		margin-top: 50px;
 		border: solid gray 1px;
+		height: 350px;
 	}
 
 	.box h4{
@@ -15,6 +16,11 @@
 	}
 
 	.box h3{
+		text-align: center;
+	}
+
+	.box h2{
+		margin-top:36px;
 		text-align: center;
 	}
 </style>
@@ -32,7 +38,7 @@
 				<hr>
 
 				<div class="columns medium-12">
-					<h4>Subscription</h4>
+					<h4>assinaturas</h4>
 					<br>
 
 					<h2 id="contador">Carregando..</h2>
@@ -51,7 +57,7 @@
 var you = new YouSubscription({
 	apiKey: 'AIzaSyAMAL3fSH9WWXgEpmAEsvEiQzbhH0Dug-o', 
 	userName: 'CaseyNeistat', 
-	interval: 1000 * 5, 
+	interval: 1000 * 2, 
 	elId: '#contador'
 }); 
 
