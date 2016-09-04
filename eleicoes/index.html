@@ -8,8 +8,8 @@
 <body>
 
 	<div class="row" style="margin-top:100px;">
-		<div class="medium-5 medium-centered columns">
-			<h1>Escolha a sua cidade</h1>
+		<div class="medium-12  columns">
+			<h1 style="text-align:center">Escolha sua cidade</h1>
 		</div>
 	</div>
 
@@ -18,9 +18,8 @@
 		<div class="medium-3 medium-centered columns">
 			<form>
 				<label>
-					Cidade
 					<select v-model="cidade" v-on:change="onChange">
-						<option>--Selecione--</option>
+						<option value="">--Selecione--</option>
 						<option v-for="cidade of cidades" value="{{cidade.codigo}}">{{cidade.nome}}</option>
 					</select>	
 				</label>
@@ -133,18 +132,43 @@
 		<p class="lead">{{candidato.nomeCompleto}}</p>
 		
 		<div class="row">
-			<div class="columns medium-3 medium-centered">
+			<div class="columns medium-2 medium-centered">
 				<img v-bind:src="candidato.fotoUrl">
 			</div>
 		</div>	
-
-		<h3>Bens</h3>
+		
+		<h3>Bens detalhados</h3>
 		<div class="row">
-			<div class="columns medium-12">
+			<!-- <div class="columns medium-12">
 				<pre style="font-size: 11px">
 					{{ candidato.bens | json }}
 				</pre>
-			</div>
+			</div> -->
+
+			<table >
+				<thead>
+					<tr>
+						<th width="500">Descrição</th>
+						<th>Tipo</th>
+						<th width="150">Valor</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr v-for="bem of candidato.bens" >
+						<td>{{bem.descricao}}</td>
+						<td>{{bem.descricaoDeTipoDeBem}}</td>
+						<td>{{bem.valor | locale}}</td>
+					</tr>
+
+					<tr >
+						<td></td>
+						<td><b>Total</b></td>
+						<td>{{sumBens}}</td>
+					</tr>
+
+				</tbody>
+			</table>
+
 		</div>	
 
 		<button class="close-button" data-close aria-label="Close modal" type="button">
@@ -251,7 +275,22 @@
 					$('#candidato').foundation('open');
 				}, this.cidade, idCandidato ); 
 			}
+		}, 
+
+
+		computed:{
+			sumBens: function(){
+				var sum = 0; 
+				for(var a = 0; a < this.candidato.bens.length; a++)
+					sum += this.candidato.bens[a].valor; 
+
+				return 'R$ '+ sum.toLocaleString('pt-BR'); 
+			}
 		}
+	}); 
+
+	Vue.filter('locale', function(value){
+		return 'R$ '+ value.toLocaleString('pt-BR'); 
 	}); 
 
 </script>
