@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+	<meta charset="utf-8">
+	<title>Teste</title>
+	<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/foundation/6.2.3/foundation.min.css">
+</head>
+<body>
+
+	<div class="row" style="margin-top:100px;">
+		<div class="medium-5 medium-centered columns">
+			<h1>Escolha a sua cidade</h1>
+		</div>
+	</div>
+
+
+	<div class="row">
+		<div class="medium-3 medium-centered columns">
+			<form>
+				<label>
+					Cidade
+					<select v-model="cidade" v-on:change="onChange">
+						<option>--Selecione--</option>
+						<option v-for="cidade of cidades" value="{{cidade.codigo}}">{{cidade.nome}}</option>
+					</select>	
+				</label>
+			</form>
+		</div>
+	</div>
+
+	<hr>
+
+	<!-- Prefeitos -->
+	<div class="row" v-show="prefeitos.length > 0">
+		<h3>Prefeitos</h3>
+		<div class="columns medium-12">
+			<table >
+				<thead>
+					<tr>
+						<th width="200">Nome na Urna</th>
+						<th>Nome Completo</th>
+						<th width="150">Nº</th>
+						<th width="150">Situação</th>
+						<th>Partido</th>
+						<th width="150">Coligação</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr v-for="prefeito of prefeitos">
+						<td>{{prefeito.nomeUrna}}</td>
+						<td>{{prefeito.nomeCompleto}}</td>
+						<td>{{prefeito.numero}}</td>
+						<td>{{prefeito.descricaoSituacao}}</td>
+						<td>{{prefeito.partido.sigla}}</td>
+						<td>{{prefeito.nomeColigacao}}</td>
+					</tr>
+
+				</tbody>
+			</table>
+		</div>
+	</div>
+
+	<!-- Vices -->
+	<div class="row" v-show="vices.length > 0">
+		<h3>Vice-Prefeitos</h3>
+		<div class="columns medium-12">
+				<table>
+				<thead>
+					<tr>
+						<th width="200">Nome na Urna</th>
+						<th>Nome Completo</th>
+						<th width="150">Nº</th>
+						<th width="150">Situação</th>
+						<th>Partido</th>
+						<th width="150">Coligação</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr v-for="vice of vices">
+						<td>{{vice.nomeUrna}}</td>
+						<td>{{vice.nomeCompleto}}</td>
+						<td>{{vice.numero}}</td>
+						<td>{{vice.descricaoSituacao}}</td>
+						<td>{{vice.partido.sigla}}</td>
+						<td>{{vice.nomeColigacao}}</td>
+					</tr>
+
+				</tbody>
+			</table>
+		</div>
+	</div>
+
+
+	<!-- Vereadores -->
+	<div class="row" v-show="vereadores.length > 0">
+		<h3>Vereadores</h3>
+		<div class="columns medium-12">
+			<table >
+				<thead>
+					<tr>
+						<th width="200">Nome na Urna</th>
+						<th>Nome Completo</th>
+						<th width="150">Nº</th>
+						<th width="150">Situação</th>
+						<th>Partido</th>
+						<th width="150">Coligação</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr v-for="vereador of vereadores" >
+						<td>{{vereador.nomeUrna}}</td>
+						<td>{{vereador.nomeCompleto}}</td>
+						<td>{{vereador.numero}}</td>
+						<td>{{vereador.descricaoSituacao}}</td>
+						<td>{{vereador.partido.sigla}}</td>
+						<td>{{vereador.nomeColigacao}}</td>
+					</tr>
+
+				</tbody>
+			</table>
+		</div>
+	</div>
+
+	<script type="text/javascript" src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
+	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/foundation/6.2.3/foundation.min.js"></script>
+	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/vue/1.0.26/vue.js"></script>
+
+	<script type="text/javascript">
+		$(document).foundation(); 
+
+	//Interface para a api: 
+
+	var Api = function(){
+
+	}; 
+
+	Api.prototype.sender = function(url, callback){
+		$.get(url,{}).
+		done(function(data){
+			callback(data); 
+		}). 
+		fail(function(){
+			alert("Houve um problema na requisição dos dados"); 
+		})
+	}; 
+
+	Api.prototype.cidades = function(callback){
+		var url = 'http://divulgacandcontas.tse.jus.br/divulga/rest/v1/eleicao/buscar/GO/2/municipios'
+		
+		this.sender(url, callback); 
+	}; 
+
+	Api.prototype.prefeito = function(callback, idCidade){
+		var url = 'http://divulgacandcontas.tse.jus.br/divulga/rest/v1/candidatura/listar/2016/'+idCidade+'/2/11/candidatos'; 
+		this.sender(url, callback); 
+	}; 
+
+	Api.prototype.vicePrefeito = function(callback, idCidade){
+		var url = 'http://divulgacandcontas.tse.jus.br/divulga/rest/v1/candidatura/listar/2016/'+idCidade+'/2/12/candidatos'; 
+		this.sender(url, callback); 
+	}; 
+
+	Api.prototype.vereador = function(callback, idCidade){
+		var url = 'http://divulgacandcontas.tse.jus.br/divulga/rest/v1/candidatura/listar/2016/'+idCidade+'/2/13/candidatos'; 
+		this.sender(url, callback); 
+	}; 
+
+	var api = new Api(); 
+
+	var vm = new Vue({
+		el: 'body', 
+
+		data: {
+			cidade: '', 
+			cidades: [], 
+			prefeitos: [], 
+			vices: [], 
+			vereadores:[]
+		}, 
+
+		ready: function(){
+			var self = this; 
+
+			api.cidades(function(data){
+				self.$set('cidades', data.municipios); 
+			}); 
+		}, 
+
+		methods:{
+			onChange: function(){
+				var self = this; 
+
+				api.prefeito(function(data){
+					console.log(data); 
+					self.$set('prefeitos', data.candidatos); 
+				},this.cidade); 
+
+				api.vicePrefeito(function(data){
+					self.$set('vices', data.candidatos); 
+					console.log(data); 
+				},this.cidade); 
+
+				api.vereador(function(data){
+					console.log(data); 
+					self.$set('vereadores', data.candidatos); 
+				},this.cidade); 
+
+			}
+		}
+	}); 
+
+</script>
+</body>
+</html>
