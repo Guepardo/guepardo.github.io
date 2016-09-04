@@ -43,6 +43,7 @@
 						<th width="150">Situação</th>
 						<th>Partido</th>
 						<th width="150">Coligação</th>
+						<th width="150">Detalhes</th>
 					</tr>
 				</thead>
 				<tbody>
@@ -53,6 +54,7 @@
 						<td>{{prefeito.descricaoSituacao}}</td>
 						<td>{{prefeito.partido.sigla}}</td>
 						<td>{{prefeito.nomeColigacao}}</td>
+						<td><button type="button" class="button" @click="showCandidato(prefeito.id)">Detalhe</button></td>
 					</tr>
 
 				</tbody>
@@ -64,7 +66,7 @@
 	<div class="row" v-show="vices.length > 0">
 		<h3>Vice-Prefeitos</h3>
 		<div class="columns medium-12">
-				<table>
+			<table>
 				<thead>
 					<tr>
 						<th width="200">Nome na Urna</th>
@@ -73,6 +75,7 @@
 						<th width="150">Situação</th>
 						<th>Partido</th>
 						<th width="150">Coligação</th>
+						<th width="150">Detalhes</th>
 					</tr>
 				</thead>
 				<tbody>
@@ -83,6 +86,7 @@
 						<td>{{vice.descricaoSituacao}}</td>
 						<td>{{vice.partido.sigla}}</td>
 						<td>{{vice.nomeColigacao}}</td>
+						<td><button type="button" class="button" @click="showCandidato(vice.id)">Detalhe</button></td>
 					</tr>
 
 				</tbody>
@@ -104,6 +108,7 @@
 						<th width="150">Situação</th>
 						<th>Partido</th>
 						<th width="150">Coligação</th>
+						<th width="150">Detalhes</th>
 					</tr>
 				</thead>
 				<tbody>
@@ -114,6 +119,7 @@
 						<td>{{vereador.descricaoSituacao}}</td>
 						<td>{{vereador.partido.sigla}}</td>
 						<td>{{vereador.nomeColigacao}}</td>
+						<td><button type="button" class="button" @click="showCandidato(vereador.id)">Detalhe</button></td>
 					</tr>
 
 				</tbody>
@@ -121,6 +127,30 @@
 		</div>
 	</div>
 
+	<!-- modal -->
+	<div class="reveal large" id="candidato" data-reveal>
+	<h1></h1>
+		<p class="lead">{{candidato.nomeCompleto}}</p>
+		
+		<div class="row">
+			<div class="columns medium-3 medium-centered">
+				<img v-bind:src="candidato.fotoUrl">
+			</div>
+		</div>	
+
+		<h3>Bens</h3>
+		<div class="row">
+			<div class="columns medium-12">
+				<pre style="font-size: 11px">
+					{{ candidato.bens | json }}
+				</pre>
+			</div>
+		</div>	
+
+		<button class="close-button" data-close aria-label="Close modal" type="button">
+			<span aria-hidden="true">&times;</span>
+		</button>
+	</div>
 	<script type="text/javascript" src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
 	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/foundation/6.2.3/foundation.min.js"></script>
 	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/vue/1.0.26/vue.js"></script>
@@ -165,6 +195,11 @@
 		this.sender(url, callback); 
 	}; 
 
+	Api.prototype.candidato = function(callback,idCidade, idCandidato){
+		var url = 'http://divulgacandcontas.tse.jus.br/divulga/rest/v1/candidatura/buscar/2016/'+idCidade+'/2/candidato/'+idCandidato; 
+		this.sender(url, callback); 
+	}
+
 	var api = new Api(); 
 
 	var vm = new Vue({
@@ -175,7 +210,8 @@
 			cidades: [], 
 			prefeitos: [], 
 			vices: [], 
-			vereadores:[]
+			vereadores:[], 
+			candidato: {}
 		}, 
 
 		ready: function(){
@@ -205,6 +241,15 @@
 					self.$set('vereadores', data.candidatos); 
 				},this.cidade); 
 
+			}, 
+
+			showCandidato: function(idCandidato){
+				var self = this; 
+
+				api.candidato(function(data){
+					self.$set('candidato', data); 
+					$('#candidato').foundation('open');
+				}, this.cidade, idCandidato ); 
 			}
 		}
 	}); 
